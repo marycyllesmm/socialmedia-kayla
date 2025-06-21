@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Cylle L. Jose - Social Media Manager Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce7f3; /* Tailwind pink-50 for a soft background */
+            color: #1e293b; /* Tailwind slate-800 for main text */
+        }
+        /* Custom scroll-to-top button style */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #0c4a6e; /* Tailwind blue-900 for dark accent */
+            color: white; /* White text */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        #scrollToTopBtn:hover {
+            background-color: #1d4ed8; /* Darker blue on hover (blue-700) */
+        }
+        .account-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .account-card a {
+            text-align: center;
+            margin-bottom: 4px; /* Space between handle and category */
+        }
+        .account-category {
+            font-size: 0.875rem; /* text-sm */
+            color: #4b5563; /* Tailwind gray-600 for better contrast */
+        }
+
+        /* Custom style for contact buttons */
+        .contact-action-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffe4e6; /* light pink */
+            color: #be185d; /* rose-700 */
+            font-weight: 600;
+            padding: 1rem 2rem; /* py-4 px-8 */
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: all 0.3s ease;
+            transform: scale(1);
+            text-decoration: none; /* Ensure links don't have default underline */
+        }
+        .contact-action-box:hover {
+            background-color: #fca5a5; /* rose-300 */
+            color: #831843; /* rose-800 */
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-xl */
+        }
+        .contact-action-box svg {
+            margin-bottom: 0.25rem; /* Space between icon and text */
+        }
+        .contact-action-box .main-text {
+            font-size: 1.125rem; /* text-xl */
+            line-height: 1.5rem; /* leading-6 */
+        }
+        .contact-action-box .sub-text {
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.25rem; /* leading-4 */
+            font-weight: 400; /* normal font weight */
+            color: #64748b; /* slate-500 */
+        }
+
+        .contact-location-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffe4e6; /* light pink */
+            color: #be185d; /* rose-700 */
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .contact-location-box svg {
+            margin-bottom: 0.25rem;
+        }
+        .contact-location-box .main-text {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+        .contact-location-box .sub-text {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+    </style>
+</head>
+<body class="antialiased leading-relaxed">
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-xl">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <a href="#about" class="text-2xl font-bold text-blue-800 hover:text-blue-900 transition duration-300">Mary Cylle L. Jose</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-blue-800 font-medium transition duration-300">About Me</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-800 font-medium transition duration-300">Services & Pricing</a>
+                <a href="#skills" class="text-gray-700 hover:text-blue-800 font-medium transition duration-300">Skills</a>
+                <a href="#managed-accounts" class="text-gray-700 hover:text-blue-800 font-medium transition duration-300">Managed Accounts</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-800 font-medium transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+            <a href="#about" class="block text-gray-700 hover:text-blue-800 font-medium transition duration-300 px-4 py-2 rounded-lg bg-gray-50">About Me</a>
+            <a href="#services" class="block text-gray-700 hover:text-blue-800 font-medium transition duration-300 px-4 py-2 rounded-lg bg-gray-50">Services & Pricing</a>
+            <a href="#skills" class="block text-gray-700 hover:text-blue-800 font-medium transition duration-300 px-4 py-2 rounded-lg bg-gray-50">Skills</a>
+            <a href="#managed-accounts" class="block text-gray-700 hover:text-blue-800 font-medium transition duration-300 px-4 py-2 rounded-lg bg-gray-50">Managed Accounts</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-800 font-medium transition duration-300 px-4 py-2 rounded-lg bg-gray-50">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+
+        <!-- About Me / Introduction Section -->
+        <section id="about" class="my-16 bg-white p-8 md:p-12 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-center gap-8">
+            <div class="flex-shrink-0 mb-8 md:mb-0 md:mr-8">
+                <!-- Placeholder for your professional photo - **Replace this with your actual photo!** -->
+                <img src="https://placehold.co/200x200/fecdd3/0c4a6e?text=Your+Photo" alt="Mary Cylle L. Jose" class="rounded-full w-48 h-48 object-cover border-4 border-blue-900 shadow-lg">
+            </div>
+            <div class="text-center md:text-left max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 leading-tight">
+                    Igniting Online Growth: Your Dedicated Social Media Strategist
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-6">
+                    I'm <span class="font-semibold text-blue-800">Mary Cylle L. Jose</span>, an innovative and experienced Social Media Manager with a strong passion and enthusiasm towards delivering brand awareness, presence, influencer managing and enhanced performance.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700">
+                    My mission is to elevate your brand's presence, amplify engagement, and drive measurable results through strategic content creation, community building, and impactful influencer collaborations. I thrive on crafting bespoke social media strategies that resonate with your target audience, transforming clicks into loyal customers and building vibrant online communities. Let's make your brand shine online!
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Overview & Pricing Section -->
+        <section id="services" class="my-16 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">My Comprehensive Social Media Services & Pricing</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
+                My services are designed to meet your unique business needs, offering clear packages and additional services to build your online presence.
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 text-center mb-6">Social Media Packages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Starter Package -->
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md border-t-4 border-orange-400 hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-bold text-blue-800 mb-4">Starter</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                            <li>1x Social media platform</li>
+                            <li>6x posts per month</li>
+                            <li>2x reels per month</li>
+                            <li>2x stories per month</li>
+                            <li>15 mins/engagement daily</li>
+                            <li>Monthly report</li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <p class="text-4xl font-extrabold text-blue-900 text-center">$650</p>
+                        <p class="text-sm text-gray-600 text-center">per month</p>
+                    </div>
+                </div>
+
+                <!-- Growth Package -->
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md border-t-4 border-orange-400 hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-bold text-blue-800 mb-4">Growth</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                            <li>2 Social media channels</li>
+                            <li>12 posts per month</li>
+                            <li>6 reels per month</li>
+                            <li>8 stories per month</li>
+                            <li>Bi-weekly report</li>
+                            <li>1x competitor-trend monitoring/month</li>
+                            <li>1 hr/engagement daily</li>
+                            <li>5x daily lead outreach</li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <p class="text-4xl font-extrabold text-blue-900 text-center">$1500</p>
+                        <p class="text-sm text-gray-600 text-center">per month</p>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="bg-orange-50 p-6 rounded-xl shadow-md border-t-4 border-orange-400 hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-2xl font-bold text-blue-800 mb-4">Premium</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                            <li>4 Social media channels</li>
+                            <li>16x posts/month</li>
+                            <li>8x reels/month</li>
+                            <li>12x stories/month</li>
+                            <li>Weekly report</li>
+                            <li>Bi-weekly trend & competitor monitoring</li>
+                            <li>4 hrs/engagement daily</li>
+                            <li>30-40x leads outreach per week</li>
+                            <li>SEO content creation copy</li>
+                            <li>Ads campaign setup & monitoring</li>
+                            <li>Influencer collaborations</li>
+                            <li>Crisis communication</li>
+                            <li>Highlights design & organization</li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <p class="text-4xl font-extrabold text-blue-900 text-center">$2999</p>
+                        <p class="text-sm text-gray-600 text-center">per month</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 text-center mb-6">Additional Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Search Engine Optimization (SEO)</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Cold Calling</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Ads Campaign Setup & Monitoring</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Crisis Communication (CSR)</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Influencer Collaboration</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Email Marketing</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Giveaway Management</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Social Media Audit</h4>
+                </div>
+                <div class="bg-pink-100 p-5 rounded-xl shadow-sm text-center">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">DM Funnels & Auto Response</h4>
+                </div>
+            </div>
+            <p class="text-center text-gray-800 font-semibold mt-10">
+                For detailed discussions on any of these services or to request a custom package, please don't hesitate to contact me.
+            </p>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="my-16 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">My Arsenal: Skills & Tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Social Media Skills (from resume) -->
+                <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-purple-800 mb-3">Core Social Media Skills</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Social Media Strategy</li>
+                        <li>Copywriting</li>
+                        <li>Project Management</li>
+                        <li>Creative Directions</li>
+                        <li>Branding Guidelines</li>
+                        <li>Social Media Analytics & Reports</li>
+                        <li>Social Media Ads</li>
+                        <li>Google Business Page</li>
+                        <li>SEO</li>
+                        <li>Content Creation</li>
+                    </ul>
+                </div>
+                <!-- General Professional Skills (from resume) -->
+                <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-purple-800 mb-3">Professional & Organizational Skills</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Communication & Collaboration</li>
+                        <li>Organization & Time Management</li>
+                        <li>Appointment Scheduling</li>
+                        <li>Client Relationship Management</li>
+                        <li>Data Analysis</li>
+                    </ul>
+                </div>
+                <!-- Common Tools (implied by skills) -->
+                <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-purple-800 mb-3">Software & Platforms Proficiency</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Instagram, Facebook, LinkedIn, TikTok, X, Pinterest, YouTube</li>
+                        <li>Meta Business Suite</li>
+                        <li>Analytics Dashboards (Native platform insights, Google Analytics)</li>
+                        <li>Scheduling Tools (e.g., Hootsuite, Buffer, Later, Planoly - *specify what you use*)</li>
+                        <li>Design Tools (Canva, Basic Adobe Creative Suite - *specify which programs*)</li>
+                        <li>Communication Tools (e.g., Slack, Google Workspace)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Managed Accounts Section -->
+        <section id="managed-accounts" class="my-16 bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Accounts I've Managed</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
+                Here is a selection of Instagram accounts I have successfully managed, demonstrating my hands-on experience across various industries and niches.
+                For specific case studies, detailed strategies, and measurable results achieved for these accounts, please feel free to reach out directly.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/aemhiarts" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@aemhiarts</a>
+                    <span class="account-category">Arts & Crafts</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/my.activ.life" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@my.activ.life</a>
+                    <span class="account-category">Fitness & Wellness</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/therealaquapaw" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@therealaquapaw</a>
+                    <span class="account-category">Pet Products</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/bearingtonbears" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@bearingtonbears</a>
+                    <span class="account-category">Toys & Collectibles</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/butterfly.craze" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@butterfly.craze</a>
+                    <span class="account-category">Crafts & Hobbies</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/caphillbrands" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@caphillbrands</a>
+                    <span class="account-category">Brand Management</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/cozywaybaby" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@CozyWayBaby</a>
+                    <span class="account-category">Baby Products</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/creativeqt" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@creativeqt</a>
+                    <span class="account-category">Kids Toys & Education</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/curiouschef" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@curiouschef</a>
+                    <span class="account-category">Kids Cookware</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/diygiftkits" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@diygiftkits</a>
+                    <span class="account-category">DIY & Gifts</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/dodobabiesshop" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@dodobabiesshop</a>
+                    <span class="account-category">Baby Apparel</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/girlzonefun" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@girlzonefun</a>
+                    <span class="account-category">Kids Entertainment</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/grabease" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@grabease</a>
+                    <span class="account-category">Baby Feeding</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/gym1forfun" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@Gym1ForFun</a>
+                    <span class="account-category">Home Fitness</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/kassa" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@kassa</a>
+                    <span class="account-category">Art Supplies</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/lilgadgets" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@lilgadgets</a>
+                    <span class="account-category">Kids Gadgets</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/magnificent.101" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@magnificent.101</a>
+                    <span class="account-category">Lifestyle & Inspiration</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/marblegenius" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@marblegenius</a>
+                    <span class="account-category">STEM Toys</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/merkastore" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@merkastore</a>
+                    <span class="account-category">E-commerce Retail</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/originalstationery" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@originalstationery</a>
+                    <span class="account-category">Stationery</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/buddypouch" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@buddypouch</a>
+                    <span class="account-category">Travel Accessories</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/strictlybriks" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@strictlybriks</a>
+                    <span class="account-category">Construction Toys</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/tadpoleshome" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@tadpoleshome</a>
+                    <span class="account-category">Home Goods</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/tickleandmain" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@tickleandmain</a>
+                    <span class="account-category">Kids Apparel & Gifts</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/bryteproducts" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@bryteproducts</a>
+                    <span class="account-category">Consumer Goods</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/yellowscopegirl" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@yellowscopegirl</a>
+                    <span class="account-category">Science Kits (Kids)</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/littlesmarties_khalifacity" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@littlesmarties_khalifacity</a>
+                    <span class="account-category">Education/Children</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/vantagemarkets.ph" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@vantagemarkets.ph</a>
+                    <span class="account-category">Finance/Investments</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/happybingo.official" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@happybingo.official</a>
+                    <span class="account-category">Gaming/Entertainment</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/prestoneph" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@prestoneph</a>
+                    <span class="account-category">Automotive</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/cloroxph" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@cloroxph</a>
+                    <span class="account-category">Cleaning Products</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/easterncommph" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@easterncommph</a>
+                    <span class="account-category">Telecommunications</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/pinesol.ph" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@pinesol.ph</a>
+                    <span class="account-category">Cleaning Products</span>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-sm text-center account-card">
+                    <a href="https://www.instagram.com/loberrealestate_fl" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline font-semibold text-lg block">@loberrealestate_fl</a>
+                    <span class="account-category">Real Estate</span>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-10 text-sm">
+                *For detailed strategies, specific campaigns, and measurable results for these accounts, please contact me directly for a personalized presentation.*
+            </p>
+        </section>
+
+        <!-- Call to Action & Contact Information Section -->
+        <section id="contact" class="my-16 p-8 md:p-12 rounded-2xl shadow-xl text-center bg-gradient-to-br from-pink-600 via-orange-500 to-blue-700">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-md">Ready to Elevate Your Brand's Online Presence?</h2>
+            <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-sm">Let's connect and discuss how I can help your business thrive online.</p>
+            <div class="space-y-6 md:space-y-0 md:flex md:justify-center md:space-x-8 text-lg md:text-xl">
+                <a href="mailto:marycylle.jose@gmail.com" class="contact-action-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span class="main-text">Email Me</span>
+                    <span class="sub-text">marycylle.jose@gmail.com</span>
+                </a>
+                <a href="tel:+971501935448" class="contact-action-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.67-3.67A19.79 19.79 0 0 1 2 6.18V4a2 2 0 0 1 2-2h3.92a2 2 0 0 1 1.66.9l.4 1.2a2 2 0 0 1-.32 2.22l-2.85 2.85a1 1 0 0 0 .3 1.4c1.61.94 3.06 2.05 4.34 3.33a1 1 0 0 0 1.4.3l2.85-2.85a2 2 0 0 1 2.22-.32l1.2.4a2 2 0 0 1 .9 1.66z"></path></svg>
+                    <span class="main-text">Call Me</span>
+                    <span class="sub-text">+971-50-193-5448</span>
+                </a>
+                <div class="contact-location-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span class="main-text">My Location</span>
+                    <span class="sub-text">Abu Dhabi, UAE</span>
+                </div>
+            </div>
+            <p class="mt-8 text-pink-100 text-sm drop-shadow-sm">
+                Serving clients globally, based in Abu Dhabi, UAE.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-8 text-center text-sm rounded-t-xl">
+        <p>&copy; 2024 Mary Cylle L. Jose. All rights reserved.</p>
+        <p>Built with passion for digital growth.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Show/hide scroll to top button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+</html>
